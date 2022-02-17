@@ -1,24 +1,152 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="assignment1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZT-aS-vZ8">
+                                <rect key="frame" x="0.0" y="127" width="126" height="26"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Course Title:">
+                                        <attributes>
+                                            <color key="NSColor" systemColor="systemBackgroundColor"/>
+                                            <font key="NSFont" size="22" name="TrebuchetMS"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hx5-oT-lYb">
+                                <rect key="frame" x="136" y="119.5" width="278" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GPA CALCULATOR!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4aZ-3g-NGl">
+                                <rect key="frame" x="15" y="64" width="384" height="33"/>
+                                <fontDescription key="fontDescription" name="SignPainter-HouseScriptSemibold" family="SignPainter" pointSize="36"/>
+                                <color key="textColor" systemColor="systemYellowColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coursework:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gfl-IL-eF5">
+                                <rect key="frame" x="0.0" y="193" width="126" height="24"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="20"/>
+                                <color key="textColor" systemColor="systemBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assignments" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJu-KD-kRB">
+                                <rect key="frame" x="0.0" y="237" width="126" height="21"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="18"/>
+                                <color key="textColor" systemColor="systemBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Midterm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1u-B5-vUf">
+                                <rect key="frame" x="0.0" y="273" width="126" height="21"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="18"/>
+                                <color key="textColor" systemColor="systemBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Final" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G14-TX-2fU">
+                                <rect key="frame" x="0.0" y="309" width="126" height="21"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="18"/>
+                                <color key="textColor" systemColor="systemBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYO-sS-DeA">
+                                <rect key="frame" x="0.0" y="350" width="126" height="31"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Add Course"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rpp-KS-tzL">
+                                <rect key="frame" x="136" y="193" width="268" height="188"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWd-k9-UvY">
+                                        <rect key="frame" x="5" y="0.0" width="101.5" height="24"/>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="20"/>
+                                        <color key="textColor" systemColor="systemBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVR-pH-crH">
+                                        <rect key="frame" x="161.5" y="0.0" width="111.5" height="24"/>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="20"/>
+                                        <color key="textColor" systemColor="systemBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atR-Bf-68N">
+                                        <rect key="frame" x="116.5" y="0.0" width="35" height="24"/>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="20"/>
+                                        <color key="textColor" systemColor="systemBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="atR-Bf-68N" firstAttribute="centerX" secondItem="Rpp-KS-tzL" secondAttribute="centerX" id="6dm-7I-cuq"/>
+                                    <constraint firstItem="atR-Bf-68N" firstAttribute="leading" secondItem="sWd-k9-UvY" secondAttribute="trailing" constant="10" id="955-sM-p3t"/>
+                                    <constraint firstItem="atR-Bf-68N" firstAttribute="top" secondItem="Rpp-KS-tzL" secondAttribute="top" id="9T7-RP-NU6"/>
+                                    <constraint firstItem="sWd-k9-UvY" firstAttribute="top" secondItem="Rpp-KS-tzL" secondAttribute="top" id="BZm-Qj-Uzp"/>
+                                    <constraint firstItem="gVR-pH-crH" firstAttribute="top" secondItem="Rpp-KS-tzL" secondAttribute="top" id="DLd-H9-c9h"/>
+                                    <constraint firstItem="gVR-pH-crH" firstAttribute="leading" secondItem="atR-Bf-68N" secondAttribute="trailing" constant="10" id="Vh4-zh-3Lv"/>
+                                    <constraint firstItem="sWd-k9-UvY" firstAttribute="leading" secondItem="Rpp-KS-tzL" secondAttribute="leading" constant="5" id="b9D-pY-HID"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fJu-KD-kRB" firstAttribute="trailing" secondItem="Gfl-IL-eF5" secondAttribute="trailing" id="0JS-Av-HIA"/>
+                            <constraint firstItem="fJu-KD-kRB" firstAttribute="top" secondItem="Gfl-IL-eF5" secondAttribute="bottom" constant="20" id="23P-DN-YoQ"/>
+                            <constraint firstItem="IZT-aS-vZ8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2OW-Ff-4cG"/>
+                            <constraint firstItem="hx5-oT-lYb" firstAttribute="top" secondItem="4aZ-3g-NGl" secondAttribute="bottom" constant="22.5" id="2r9-xv-fT3"/>
+                            <constraint firstItem="G14-TX-2fU" firstAttribute="trailing" secondItem="D1u-B5-vUf" secondAttribute="trailing" id="4Kp-Uw-cfo"/>
+                            <constraint firstItem="Rpp-KS-tzL" firstAttribute="leading" secondItem="Gfl-IL-eF5" secondAttribute="trailing" constant="10" id="6GO-hy-gYY"/>
+                            <constraint firstItem="Gfl-IL-eF5" firstAttribute="trailing" secondItem="IZT-aS-vZ8" secondAttribute="trailing" id="6JP-tz-EMm"/>
+                            <constraint firstItem="4aZ-3g-NGl" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="6d4-Bq-nG7"/>
+                            <constraint firstItem="Gfl-IL-eF5" firstAttribute="leading" secondItem="IZT-aS-vZ8" secondAttribute="leading" id="7Vu-Z8-naa"/>
+                            <constraint firstItem="IZT-aS-vZ8" firstAttribute="top" secondItem="4aZ-3g-NGl" secondAttribute="bottom" constant="30" id="8Wz-wb-b67"/>
+                            <constraint firstItem="D1u-B5-vUf" firstAttribute="top" secondItem="fJu-KD-kRB" secondAttribute="bottom" constant="15" id="9ut-bT-S5q"/>
+                            <constraint firstItem="VYO-sS-DeA" firstAttribute="trailing" secondItem="G14-TX-2fU" secondAttribute="trailing" id="D0E-Wy-S8p"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hx5-oT-lYb" secondAttribute="trailing" id="H8e-hm-ODC"/>
+                            <constraint firstItem="VYO-sS-DeA" firstAttribute="leading" secondItem="G14-TX-2fU" secondAttribute="leading" id="LCL-eJ-g6q"/>
+                            <constraint firstItem="hx5-oT-lYb" firstAttribute="centerY" secondItem="IZT-aS-vZ8" secondAttribute="centerY" id="M3p-CQ-mW9"/>
+                            <constraint firstItem="VYO-sS-DeA" firstAttribute="top" secondItem="G14-TX-2fU" secondAttribute="bottom" constant="20" id="MZG-Dk-jTf"/>
+                            <constraint firstItem="G14-TX-2fU" firstAttribute="top" secondItem="D1u-B5-vUf" secondAttribute="bottom" constant="15" id="PIV-zd-GJR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rpp-KS-tzL" secondAttribute="trailing" constant="10" id="Qbx-OA-z4a"/>
+                            <constraint firstItem="4aZ-3g-NGl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="U5I-Oj-Y2S"/>
+                            <constraint firstItem="G14-TX-2fU" firstAttribute="leading" secondItem="D1u-B5-vUf" secondAttribute="leading" id="UNk-YJ-Oru"/>
+                            <constraint firstItem="D1u-B5-vUf" firstAttribute="trailing" secondItem="fJu-KD-kRB" secondAttribute="trailing" id="YaF-W3-nj6"/>
+                            <constraint firstItem="Gfl-IL-eF5" firstAttribute="top" secondItem="IZT-aS-vZ8" secondAttribute="bottom" constant="40" id="isE-yt-ro2"/>
+                            <constraint firstItem="Rpp-KS-tzL" firstAttribute="top" secondItem="Gfl-IL-eF5" secondAttribute="top" id="jT3-Pm-7wB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gVR-pH-crH" secondAttribute="trailing" constant="5" id="lX0-Am-uMQ"/>
+                            <constraint firstItem="Rpp-KS-tzL" firstAttribute="bottom" secondItem="VYO-sS-DeA" secondAttribute="bottom" id="ldr-2k-3ze"/>
+                            <constraint firstItem="fJu-KD-kRB" firstAttribute="leading" secondItem="Gfl-IL-eF5" secondAttribute="leading" id="rQs-vv-V5o"/>
+                            <constraint firstItem="4aZ-3g-NGl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="tyv-rM-wIv"/>
+                            <constraint firstItem="D1u-B5-vUf" firstAttribute="leading" secondItem="fJu-KD-kRB" secondAttribute="leading" id="u23-fd-x30"/>
+                            <constraint firstItem="hx5-oT-lYb" firstAttribute="leading" secondItem="IZT-aS-vZ8" secondAttribute="trailing" constant="10" id="v4N-eJ-5lt"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="70.982142857142847"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
