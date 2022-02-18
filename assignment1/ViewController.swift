@@ -16,45 +16,24 @@ class ViewController: UIViewController {
     @IBOutlet weak var assignMax: UITextField!
     @IBOutlet weak var midtermMax: UITextField!
     @IBOutlet weak var finalMax: UITextField!
-    @IBOutlet weak var assignPctTotal: UITextField!
-    @IBOutlet weak var midtermPctTotal: UITextField!
-    @IBOutlet weak var finalPctTotal: UITextField!
+    @IBOutlet weak var assignPct: UITextField!
+    @IBOutlet weak var midtermPct: UITextField!
+    @IBOutlet weak var finalPct: UITextField!
     @IBOutlet weak var creditsField: UITextField!
-    @IBOutlet weak var deleteCourseID: UITextField!
-    
+    @IBOutlet weak var courseID: UITextField!
+
     @IBOutlet weak var addCourseBtn: UIButton!
     @IBOutlet weak var deleteCourseBtn: UIButton!
     
-    var mCourseText = ""
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        courseTitle.delegate = self
-        assignPoints.delegate = self
-        midtermPoints.delegate = self
-        finalPoints.delegate = self
-        assignMax.delegate = self
-        midtermMax.delegate = self
-        finalMax.delegate = self
-        assignPctTotal.delegate = self
-        midtermPctTotal.delegate = self
-        finalPctTotal.delegate = self
-        creditsField.delegate = self
-        deleteCourseID.delegate = self
     }
 
     @IBAction func addCourseClicked(_ sender: Any) {
-        if let name = courseTitle.text {
-            
+        if courseTitle.hasText, let name = courseTitle.text {
+            print("\(name)")
         }
     }
     
 
-}
-
-extension ViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        courseTitle.resignFirstResponder()
-        return true
-    }
 }
