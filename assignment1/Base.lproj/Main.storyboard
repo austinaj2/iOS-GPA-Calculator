@@ -66,6 +66,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYO-sS-DeA">
                                 <rect key="frame" x="0.0" y="332.5" width="126.5" height="135.5"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Add Course"/>
+                                <connections>
+                                    <action selector="addCourseAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NST-Hq-0xS"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rpp-KS-tzL">
                                 <rect key="frame" x="136.5" y="175.5" width="267.5" height="292.5"/>
@@ -252,6 +255,23 @@
                             <constraint firstItem="Nl7-0b-aYb" firstAttribute="leading" secondItem="7n7-4u-ymC" secondAttribute="trailing" constant="10" id="vF1-vb-AE2"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addCourseBtn" destination="VYO-sS-DeA" id="YoZ-xs-Sfy"/>
+                        <outlet property="assignMax" destination="qFs-mx-ll5" id="kYJ-qg-RHe"/>
+                        <outlet property="assignPct" destination="OcG-vC-YHl" id="NnV-Ng-1iK"/>
+                        <outlet property="assignPoints" destination="hha-cT-aa3" id="LS1-Nl-eUk"/>
+                        <outlet property="assignPtsField" destination="Tdn-Xv-YUB" id="SV1-f6-7k6"/>
+                        <outlet property="courseTitle" destination="hx5-oT-lYb" id="qZN-8w-usa"/>
+                        <outlet property="creditsField" destination="smY-8I-X4P" id="hfb-VC-pzd"/>
+                        <outlet property="deleteCourse" destination="7n7-4u-ymC" id="rhl-d7-kAo"/>
+                        <outlet property="deleteCourseID" destination="Nl7-0b-aYb" id="Ccq-8q-QQu"/>
+                        <outlet property="finalMax" destination="CD6-Wn-RIe" id="8Vc-ry-R5N"/>
+                        <outlet property="finalPctTotal" destination="hQK-6Y-CI5" id="v8y-jF-PV4"/>
+                        <outlet property="finalPoints" destination="08t-7T-Lef" id="kfz-MQ-uSt"/>
+                        <outlet property="midtermMax" destination="sO6-pW-8hW" id="7fv-x0-GP7"/>
+                        <outlet property="midtermPctTotal" destination="ZBn-0G-K5Z" id="SR4-xu-yYz"/>
+                        <outlet property="midtermPoints" destination="Zbn-g0-pFn" id="bI3-rn-9oc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
