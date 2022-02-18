@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  assignment1
 //
-//  Created by Macky Cisse on 2/15/22.
+//  Created by Andre Austin on 2/15/22.
 //
 
 import UIKit
@@ -38,6 +38,41 @@ class ViewController: UIViewController {
     //
     // boardView.text += name+"\n"
 
+    @IBAction func deleteCourseClicked(_ sender: Any) {
+        if courseID.hasText, let id = courseID.text {
+            if let num = Int(id), num <= 4 {
+                if coursesArr.count >= num {
+                    coursesArr.remove(at: num-1)
+                }
+                else {
+                    print("*No such ID")
+                }
+            }
+            else {
+                print("*Valid ID number")
+            }
+        }
+        var index = 1
+        var str = ""
+        var score = 0.0
+        var creditTotal = 0
+        for course in coursesArr {
+            creditTotal += course.credits
+            str += "\(index)) "+course.cName+" | "+"\(course.credits) - "+course.grade+"\n"
+            index += 1
+            score += course.letterScore*Double(course.credits)
+        }
+        let gpa = score/Double(creditTotal)
+        if gpa.isNaN {
+            str += "\nGPA: N/A"
+        }
+        else    {
+            str += "\nGPA: \(gpa)"
+        }
+            
+        boardView.text = str
+        
+    }
     @IBAction func addCourseClicked(_ sender: Any) {
         let c = Course()
         var s = scaledScore()
@@ -175,7 +210,6 @@ class ViewController: UIViewController {
         
         let grandTotal = c.assignScore + c.midtermScore + c.finalScore
         
-        print("grandTotal \(grandTotal)")
         if grandTotal < 60.0 {
             c.grade = "F"
             c.letterScore = 0.0
@@ -209,8 +243,6 @@ class ViewController: UIViewController {
                 index += 1
                 score += course.letterScore*Double(course.credits)
             }
-            print(score)
-            print(creditTotal)
             let gpa = score/Double(creditTotal)
             str += "\nGPA: \(gpa)"
             boardView.text = str
@@ -228,9 +260,6 @@ class ViewController: UIViewController {
         courseTitle.text = ""
         creditsField.text = ""
 
-
-
-        
     }
 
 }

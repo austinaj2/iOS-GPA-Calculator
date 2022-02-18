@@ -204,6 +204,9 @@
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7n7-4u-ymC">
                                 <rect key="frame" x="0.0" y="828" width="126.5" height="34"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Delete Course"/>
+                                <connections>
+                                    <action selector="deleteCourseClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DHR-7O-kKE"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DwU-XD-ANJ">
                                 <rect key="frame" x="30" y="508" width="354" height="280"/>
