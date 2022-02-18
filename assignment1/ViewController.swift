@@ -29,6 +29,7 @@ class ViewController: UIViewController {
     
     var workings:String = ""
     var coursesArr: Array<Course> = Array()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -83,14 +84,14 @@ class ViewController: UIViewController {
         if s.points > s.max || s.points < 0 {
             print("*Points greater than max")
         }
-        s.total = (s.points/s.max)*(s.percent/100)
+        s.total = (s.points/s.max)*(s.percent)
         c.assignScore = s.total
         aTotal = s.percent
         s = scaledScore(points: 0, max: 0, percent: 0, total: 0)
         
         if midtermPoints.hasText, let mP = midtermPoints.text {
             if let num = Double(mP) {
-                s.percent = num
+                s.points = num
             }
             else {
                 print("*Valid number")
@@ -98,7 +99,7 @@ class ViewController: UIViewController {
         }
         if midtermMax.hasText, let mM = midtermMax.text {
             if let num = Double(mM) {
-                s.percent = num
+                s.max = num
             }
             else {
                 print("*Valid number")
@@ -116,14 +117,14 @@ class ViewController: UIViewController {
         if s.points > s.max || s.points < 0 {
             print("*Points greater than max")
         }
-        s.total = (s.points/s.max)*(s.percent/100)
+        s.total = (s.points/s.max)*(s.percent)
         c.midtermScore = s.total
         mTotal = s.percent
         s = scaledScore(points: 0, max: 0, percent: 0, total: 0)
         
         if finalPoints.hasText, let fP = finalPoints.text {
             if let num = Double(fP) {
-                s.percent = num
+                s.points = num
             }
             else {
                 print("*Valid number")
@@ -131,7 +132,7 @@ class ViewController: UIViewController {
         }
         if finalMax.hasText, let fM = finalMax.text {
             if let num = Double(fM) {
-                s.percent = num
+                s.max = num
             }
             else {
                 print("*Valid number")
@@ -149,13 +150,13 @@ class ViewController: UIViewController {
         if s.points > s.max || s.points < 0 {
             print("*Points greater than max")
         }
-        s.total = (s.points/s.max)*(s.percent/100)
+        s.total = (s.points/s.max)*(s.percent)
         c.finalScore = s.total
         fTotal = s.percent
         s = scaledScore(points: 0, max: 0, percent: 0, total: 0)
         
         if creditsField.hasText, let cred = creditsField.text {
-            if let num = Int(cred), num >= 4 {
+            if let num = Int(cred), num <= 4 {
                 c.credits = num
             }
             else {
@@ -174,29 +175,61 @@ class ViewController: UIViewController {
         
         let grandTotal = c.assignScore + c.midtermScore + c.finalScore
         
-        if grandTotal >= 90 {
-            c.grade = "A"
+        print("grandTotal \(grandTotal)")
+        if grandTotal < 60.0 {
+            c.grade = "F"
+            c.letterScore = 0.0
         }
-        if grandTotal >= 80 && grandTotal < 90 {
-            c.grade = "B"
-        }
-        if grandTotal >= 70 && grandTotal < 80 {
-            c.grade = "C"
-        }
-        if grandTotal >= 60 && grandTotal < 70 {
+        else if grandTotal < 70.0 && grandTotal >= 60.0 {
             c.grade = "D"
+            c.letterScore = 1.0
+        }
+        else if grandTotal < 80.0 && grandTotal >= 70.0 {
+            c.grade = "C"
+            c.letterScore = 2.0
+        }
+        else if grandTotal < 90.0 && grandTotal >= 80.0 {
+            c.grade = "B"
+            c.letterScore = 3.0
         }
         else {
-            c.grade = "F"
+            c.grade = "A"
+            c.letterScore = 4.0
         }
         
         if coursesArr.count < 4 {
             coursesArr.append(c)
+            var index = 1
+            var str = ""
+            var score = 0.0
+            var creditTotal = 0
+            for course in coursesArr {
+                creditTotal += course.credits
+                str += "\(index)) "+course.cName+" | "+"\(course.credits) - "+course.grade+"\n"
+                index += 1
+                score += course.letterScore*Double(course.credits)
+            }
+            print(score)
+            print(creditTotal)
+            let gpa = score/Double(creditTotal)
+            str += "\nGPA: \(gpa)"
+            boardView.text = str
+            //GPA calculation here
         }
-        let index = 1
-        for course in coursesArr {
-            boardView.text = "\(index)) "+course.cName+" | "+"\(course.credits)"
-        }
+        assignPoints.text = ""
+        assignPct.text = ""
+        assignMax.text = ""
+        midtermPct.text = ""
+        midtermMax.text = ""
+        midtermPoints.text = ""
+        finalPct.text = ""
+        finalMax.text = ""
+        finalPoints.text = ""
+        courseTitle.text = ""
+        creditsField.text = ""
+
+
+
         
     }
 
@@ -215,4 +248,5 @@ class Course {
     var finalScore:Double = 0.0
     var credits:Int = 0
     var grade:String = ""
+    var letterScore:Double = 0.0
 }

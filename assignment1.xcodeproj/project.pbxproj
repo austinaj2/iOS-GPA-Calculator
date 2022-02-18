@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8419102827BF7BAD003F17D3 /* FFF_Tusj.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8419102727BF7BAD003F17D3 /* FFF_Tusj.ttf */; };
 		84D2516827BC822700F0AD23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2516727BC822700F0AD23 /* AppDelegate.swift */; };
 		84D2516A27BC822700F0AD23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2516927BC822700F0AD23 /* SceneDelegate.swift */; };
 		84D2516C27BC822700F0AD23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2516B27BC822700F0AD23 /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8419102727BF7BAD003F17D3 /* FFF_Tusj.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FFF_Tusj.ttf; path = ../../tusj/FFF_Tusj.ttf; sourceTree = "<group>"; };
 		84D2516427BC822700F0AD23 /* assignment1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = assignment1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D2516727BC822700F0AD23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84D2516927BC822700F0AD23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				84D2516927BC822700F0AD23 /* SceneDelegate.swift */,
 				84D2516B27BC822700F0AD23 /* ViewController.swift */,
 				84D2516D27BC822700F0AD23 /* Main.storyboard */,
+				8419102727BF7BAD003F17D3 /* FFF_Tusj.ttf */,
 				84D2517027BC822900F0AD23 /* Assets.xcassets */,
 				84D2517227BC822900F0AD23 /* LaunchScreen.storyboard */,
 				84D2517527BC822900F0AD23 /* Info.plist */,
@@ -234,6 +237,7 @@
 				84D2517427BC822900F0AD23 /* LaunchScreen.storyboard in Resources */,
 				84D2517127BC822900F0AD23 /* Assets.xcassets in Resources */,
 				84D2516F27BC822700F0AD23 /* Main.storyboard in Resources */,
+				8419102827BF7BAD003F17D3 /* FFF_Tusj.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
