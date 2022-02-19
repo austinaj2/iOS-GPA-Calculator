@@ -26,8 +26,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var deleteCourseBtn: UIButton!
     
     @IBOutlet weak var boardView: UITextView!
+    @IBOutlet weak var errorLabel: UILabel!
     
     var workings:String = ""
+    
     var coursesArr: Array<Course> = Array()
     
     override func viewDidLoad() {
@@ -43,13 +45,14 @@ class ViewController: UIViewController {
             if let num = Int(id), num <= 4 {
                 if coursesArr.count >= num {
                     coursesArr.remove(at: num-1)
+                    errorLabel.text = ""
                 }
                 else {
-                    print("*No such ID")
+                    errorLabel.text = "*ID not found"
                 }
             }
             else {
-                print("*Valid ID number")
+                errorLabel.text = "*Enter a valid ID number"
             }
         }
         var index = 1
@@ -69,7 +72,6 @@ class ViewController: UIViewController {
         else    {
             str += "\nGPA: \(gpa)"
         }
-            
         boardView.text = str
         
     }
@@ -84,11 +86,11 @@ class ViewController: UIViewController {
             c.cName = name
         }
         else {
-            print("*Course title!")
+            errorLabel.text = "*Course title required! Delete last course and try again."
         }
         for i in coursesArr {
             if i.cName == c.cName {
-                print("*Name already in use")
+                errorLabel.text = "*Name already in use. Delete last course and try again."
             }
         }
         if assignPoints.hasText, let aP = assignPoints.text {
@@ -96,7 +98,7 @@ class ViewController: UIViewController {
                 s.points = num
             }
             else {
-                print("*Valid number")
+                errorLabel.text = "*Valid number required. Delete last course and try again."
             }
         }
         if assignMax.hasText, let aM = assignMax.text {
@@ -104,7 +106,7 @@ class ViewController: UIViewController {
                 s.max = num
             }
             else {
-                print("*Valid number")
+                errorLabel.text = "*Valid number required. Delete last course and try again."
             }
         }
         if assignPct.hasText, let aPercent = assignPct.text {
@@ -112,12 +114,12 @@ class ViewController: UIViewController {
                 s.percent = num
             }
             else {
-                print("*Valid number")
+                errorLabel.text = "*Valid number required. Delete last course and try again."
             }
         }
         
         if s.points > s.max || s.points < 0 {
-            print("*Points greater than max")
+            errorLabel.text = "*Points greater than max. Delete last course and try again."
         }
         s.total = (s.points/s.max)*(s.percent)
         c.assignScore = s.total
@@ -129,7 +131,7 @@ class ViewController: UIViewController {
                 s.points = num
             }
             else {
-                print("*Valid number")
+                errorLabel.text = "*Valid number required. Delete last course and try again."
             }
         }
         if midtermMax.hasText, let mM = midtermMax.text {
@@ -137,7 +139,7 @@ class ViewController: UIViewController {
                 s.max = num
             }
             else {
-                print("*Valid number")
+                errorLabel.text = "*Valid number required. Delete last course and try again."
             }
         }
         if midtermPct.hasText, let mPercent = midtermPct.text {
@@ -145,12 +147,12 @@ class ViewController: UIViewController {
                 s.percent = num
             }
             else {
-                print("*Valid number")
+                errorLabel.text = "*Valid number required. Delete last course and try again."
             }
         }
         
         if s.points > s.max || s.points < 0 {
-            print("*Points greater than max")
+            errorLabel.text = "*Points greater than max. Delete last course and try again."
         }
         s.total = (s.points/s.max)*(s.percent)
         c.midtermScore = s.total
@@ -162,7 +164,7 @@ class ViewController: UIViewController {
                 s.points = num
             }
             else {
-                print("*Valid number")
+                errorLabel.text = "*Valid number required. Delete last course and try again."
             }
         }
         if finalMax.hasText, let fM = finalMax.text {
@@ -170,7 +172,7 @@ class ViewController: UIViewController {
                 s.max = num
             }
             else {
-                print("*Valid number")
+                errorLabel.text = "*Valid number required. Delete last course and try again."
             }
         }
         if finalPct.hasText, let fPercent = finalPct.text {
@@ -178,12 +180,12 @@ class ViewController: UIViewController {
                 s.percent = num
             }
             else {
-                print("*Valid number")
+                errorLabel.text = "*Valid number required. Delete last course and try again."
             }
         }
         
         if s.points > s.max || s.points < 0 {
-            print("*Points greater than max")
+            errorLabel.text = "*Points greater than max. Delete last course and try again."
         }
         s.total = (s.points/s.max)*(s.percent)
         c.finalScore = s.total
@@ -195,17 +197,17 @@ class ViewController: UIViewController {
                 c.credits = num
             }
             else {
-                print("*Valid credit number")
+                errorLabel.text = "*Valid credit number required. Delete last course and try again."
             }
         }
         if !creditsField.hasText {
-            print("*Provide a credit number")
+            errorLabel.text = "*Provide a valid credit number. Delete last course and try again."
         }
         
         let percentCheck = aTotal + mTotal + fTotal
         
         if percentCheck != 100.0 {
-            print("*Percents don't add to 100")
+            errorLabel.text = "*Percents don't add to 100. Delete last course and try again."
         }
         
         let grandTotal = c.assignScore + c.midtermScore + c.finalScore
@@ -246,6 +248,7 @@ class ViewController: UIViewController {
             let gpa = score/Double(creditTotal)
             str += "\nGPA: \(gpa)"
             boardView.text = str
+            
             //GPA calculation here
         }
         assignPoints.text = ""

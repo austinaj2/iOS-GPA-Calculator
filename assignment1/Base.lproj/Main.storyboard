@@ -195,7 +195,7 @@
                                 <rect key="frame" x="10" y="478" width="394" height="340"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ID" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nl7-0b-aYb" userLabel="Delete ID">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nl7-0b-aYb" userLabel="Delete ID">
                                 <rect key="frame" x="136.5" y="828" width="80.5" height="34"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -203,7 +203,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7n7-4u-ymC">
                                 <rect key="frame" x="0.0" y="828" width="126.5" height="34"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Delete Course"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Delete: by ID"/>
                                 <connections>
                                     <action selector="deleteCourseClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DHR-7O-kKE"/>
                                 </connections>
@@ -212,9 +212,15 @@
                                 <rect key="frame" x="30" y="508" width="354" height="280"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" name="FFFTusj-Bold" family="FFF Tusj" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="FFFTusj-Bold" family="FFF Tusj" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YrO-uN-Biq">
+                                <rect key="frame" x="15" y="46" width="384" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -241,7 +247,9 @@
                             <constraint firstItem="7n7-4u-ymC" firstAttribute="trailing" secondItem="VYO-sS-DeA" secondAttribute="trailing" id="Fv6-yR-JPj"/>
                             <constraint firstItem="DwU-XD-ANJ" firstAttribute="leading" secondItem="bTR-kH-AJl" secondAttribute="leading" constant="20" id="GEW-px-ybz"/>
                             <constraint firstItem="hQK-6Y-CI5" firstAttribute="centerY" secondItem="G14-TX-2fU" secondAttribute="centerY" id="Heg-H0-22a"/>
+                            <constraint firstItem="YrO-uN-Biq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="K6I-Wo-CfB"/>
                             <constraint firstItem="VYO-sS-DeA" firstAttribute="leading" secondItem="G14-TX-2fU" secondAttribute="leading" id="LCL-eJ-g6q"/>
+                            <constraint firstItem="YrO-uN-Biq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="2" id="LQY-nU-a9M"/>
                             <constraint firstItem="hx5-oT-lYb" firstAttribute="centerY" secondItem="IZT-aS-vZ8" secondAttribute="centerY" id="M3p-CQ-mW9"/>
                             <constraint firstItem="VYO-sS-DeA" firstAttribute="top" secondItem="G14-TX-2fU" secondAttribute="bottom" constant="20" id="MZG-Dk-jTf"/>
                             <constraint firstItem="DwU-XD-ANJ" firstAttribute="top" secondItem="bTR-kH-AJl" secondAttribute="top" constant="30" id="Mi7-xN-P0o"/>
@@ -260,6 +268,7 @@
                             <constraint firstItem="OcG-vC-YHl" firstAttribute="centerY" secondItem="fJu-KD-kRB" secondAttribute="centerY" id="hI2-v4-ieN"/>
                             <constraint firstItem="Gfl-IL-eF5" firstAttribute="top" secondItem="IZT-aS-vZ8" secondAttribute="bottom" constant="20" id="isE-yt-ro2"/>
                             <constraint firstItem="Rpp-KS-tzL" firstAttribute="top" secondItem="Gfl-IL-eF5" secondAttribute="top" id="jT3-Pm-7wB"/>
+                            <constraint firstItem="4aZ-3g-NGl" firstAttribute="top" secondItem="YrO-uN-Biq" secondAttribute="bottom" constant="3" id="l4L-Ze-tuU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="centerX" secondItem="Nl7-0b-aYb" secondAttribute="trailing" constant="-10" id="ofC-Wl-YH2"/>
                             <constraint firstItem="hx5-oT-lYb" firstAttribute="leading" secondItem="IZT-aS-vZ8" secondAttribute="trailing" constant="5" id="owM-Te-Q3h"/>
                             <constraint firstItem="7n7-4u-ymC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qda-SZ-ksL"/>
@@ -270,6 +279,7 @@
                             <constraint firstItem="D1u-B5-vUf" firstAttribute="leading" secondItem="fJu-KD-kRB" secondAttribute="leading" id="u23-fd-x30"/>
                             <constraint firstItem="bTR-kH-AJl" firstAttribute="top" secondItem="Rpp-KS-tzL" secondAttribute="bottom" constant="10" id="ukY-qv-414"/>
                             <constraint firstItem="Nl7-0b-aYb" firstAttribute="leading" secondItem="7n7-4u-ymC" secondAttribute="trailing" constant="10" id="vF1-vb-AE2"/>
+                            <constraint firstItem="YrO-uN-Biq" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="vza-sv-nbG"/>
                             <constraint firstItem="DwU-XD-ANJ" firstAttribute="centerY" secondItem="bTR-kH-AJl" secondAttribute="centerY" id="wth-r3-cYC"/>
                             <constraint firstItem="DwU-XD-ANJ" firstAttribute="centerX" secondItem="bTR-kH-AJl" secondAttribute="centerX" id="ztG-SP-H0x"/>
                         </constraints>
@@ -284,6 +294,7 @@
                         <outlet property="courseTitle" destination="hx5-oT-lYb" id="dsY-hx-l6I"/>
                         <outlet property="creditsField" destination="smY-8I-X4P" id="i2v-hj-INS"/>
                         <outlet property="deleteCourseBtn" destination="7n7-4u-ymC" id="zCt-CZ-IPE"/>
+                        <outlet property="errorLabel" destination="YrO-uN-Biq" id="PSf-9N-9Ey"/>
                         <outlet property="finalMax" destination="CD6-Wn-RIe" id="4aw-8b-uSQ"/>
                         <outlet property="finalPct" destination="hQK-6Y-CI5" id="rFG-O5-9ZO"/>
                         <outlet property="finalPoints" destination="08t-7T-Lef" id="U5P-da-qPf"/>
@@ -304,6 +315,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
